@@ -410,7 +410,7 @@ class core_course_renderer extends plugin_renderer_base {
             'inputname' => 'q',
             'searchstring' => get_string('searchcourses'),
             'hiddenfields' => (object) ['name' => 'areaids', 'value' => 'core_course-course'],
-            'query' => $value
+            'query' => s($value)
         ];
         return $this->render_from_template('core/search_input', $data);
     }
