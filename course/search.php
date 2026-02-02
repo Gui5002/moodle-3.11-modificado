@@ -24,6 +24,10 @@
 require_once("../config.php");
 require_once($CFG->dirroot.'/course/lib.php');
 
+if (!is_siteadmin()) {
+    redirect($CFG->wwwroot);
+}
+
 $q         = optional_param('q', '', PARAM_TEXT);       // Global search words.
 $search    = optional_param('search', '', PARAM_TEXT);  // search words
 $page      = optional_param('page', 0, PARAM_INT);     // which page to show
