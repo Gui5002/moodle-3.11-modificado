@@ -54,7 +54,10 @@ class block_eva_pills extends block_base
     if ($this->content !== NULL) {
       return $this->content;
     }
+
+    
     if (!empty($this->config) && is_object($this->config)) {
+      
       $data = $this->config;
       $data->slidesnumber = is_numeric($data->slidesnumber) ? (int)$data->slidesnumber : 4;
     } else {
@@ -63,8 +66,17 @@ class block_eva_pills extends block_base
     }
     $text = '';
     if ($data->slidesnumber > 0) {
-      $text = '			<section class="home6_about pt90 bgc-f9">
-		<div class="container">
+      
+      $text .= '		<section class="home6_about pt90 bgc-f9">
+      
+		<div class="container">';
+
+    if (!empty($data->title)) {
+      $text .= '<h4 data-ccn="title" style="font-size: 2rem!important; margin-bottom: 20px;">' . format_text($data->title, FORMAT_HTML, array('filter' => true)) . '</h4>';
+    }
+
+    $text .= '
+      
 			<div class="row">';
       $fs = get_file_storage();
       for ($i = 1; $i <= $data->slidesnumber; $i++) {
@@ -95,7 +107,7 @@ class block_eva_pills extends block_base
   <div class="details">
 <h5 data-ccn="slide_title' . $i . '">' . format_text($data->$slide_title, FORMAT_HTML, array('filter' => true)) . '</h5>
 <p data-ccn="slide_subtitle' . $i . '">' . format_text($data->$slide_subtitle, FORMAT_HTML, array('filter' => true)) . '</p>
-<a target="' . $button_target . '" data-ccn="slide_btn_text' . $i . '" href="' . format_text($data->$slide_btn_link, FORMAT_HTML, array('filter' => true)) . '">' . format_text($data->$slide_btn_text, FORMAT_HTML, array('filter' => true)) . ' <span class="span flaticon-right-arrow-1"></span></a>
+<a target="' . $button_target . '" data-ccn="slide_btn_text' . $i . '" href="' . format_text($data->$slide_btn_link, FORMAT_HTML, array('filter' => true)) . '" style="color: #ffffff !important">' . format_text($data->$slide_btn_text, FORMAT_HTML, array('filter' => true)) . ' <span class="span flaticon-right-arrow-1"></span></a>
   </div>
 </div>
   </div>
