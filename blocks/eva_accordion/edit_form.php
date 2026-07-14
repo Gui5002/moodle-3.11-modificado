@@ -44,7 +44,7 @@ class block_eva_accordion_edit_form extends block_edit_form
             20 => '20',
         );
 
-        $slidesmax = 10;
+        $slidesmax = 20;
         $mform->addElement('select', 'config_slidesnumber', get_string('config_items', 'theme_evagu'), $slidesrange);
         $mform->setDefault('config_slidesnumber', 4);
 
