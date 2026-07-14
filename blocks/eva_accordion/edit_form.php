@@ -32,6 +32,16 @@ class block_eva_accordion_edit_form extends block_edit_form
             8 => '8',
             9 => '9',
             10 => '10',
+            11 => '11',
+            12 => '12',
+            13 => '13',
+            14 => '14',
+            15 => '15',
+            16 => '16',
+            17 => '17',
+            18 => '18',
+            19 => '19',
+            20 => '20',
         );
 
         $slidesmax = 10;
@@ -72,9 +82,7 @@ class block_eva_accordion_edit_form extends block_edit_form
                 } else {
                     $currenttext = $text;
                 }
-                $defaults->$conffield['text'] = file_prepare_dra
-                ft_area($draftid_editor, $this->block->context->id, 'block_eva_accordion', 'content', $i, array('subdirs' => false), $currenttext);
-                $defaults->$conffield['itemid'] = $draftid_editor;
+                $defaults->$conffield['text'] = file_prepare_draft_area($draftid_editor, $this->block->context->id, 'block_eva_accordion', 'content', $i, array('subdirs' => false), $currenttext);
                 $defaults->$conffield['format'] = $this->block->config->format . $i;
                 // } else {
                 //     $text = '';

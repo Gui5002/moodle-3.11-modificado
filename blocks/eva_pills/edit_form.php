@@ -10,21 +10,35 @@ class block_eva_pills_edit_form extends block_edit_form {
             $data->slidesnumber = 4;
         }
         $mform->addElement('header', 'configheader', get_string('blocksettings', 'block'));
+
+        // Title
+        $mform->addElement('text', 'config_title', get_string('config_title', 'theme_evagu'));
+        $mform->setDefault('config_title', 'Accordion');
+        $mform->setType('config_title', PARAM_RAW);
+
         $slidesrange = array(
-          1 => '1',
-          2 => '2',
-          3 => '3',
-          4 => '4',
-          5 => '5',
-          6 => '6',
-          7 => '7',
-          8 => '8',
-          9 => '9',
-          10 => '10',
-          11 => '11',
-          12 => '12',
+            1 => '1',
+            2 => '2',
+            3 => '3',
+            4 => '4',
+            5 => '5',
+            6 => '6',
+            7 => '7',
+            8 => '8',
+            9 => '9',
+            10 => '10',
+            11 => '11',
+            12 => '12',
+            13 => '13',
+            14 => '14',
+            15 => '15',
+            16 => '16',
+            17 => '17',
+            18 => '18',
+            19 => '19',
+            20 => '20',
         );
-        $slidesmax = 12;
+        $slidesmax = 20;
         $mform->addElement('select', 'config_slidesnumber', get_string('config_items', 'theme_evagu'), $slidesrange);
         $mform->setDefault('config_slidesnumber', 4);
         for($i = 1; $i <= $slidesmax; $i++) {
