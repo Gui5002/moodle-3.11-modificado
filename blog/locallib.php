@@ -544,9 +544,9 @@ class blog_entry implements renderable {
             $options['site'] = get_string('publishtosite', 'blog');
         }
 
-        if ($CFG->bloglevel >= BLOG_GLOBAL_LEVEL) {
+        /*if ($CFG->bloglevel >= BLOG_GLOBAL_LEVEL) {
             $options['public'] = get_string('publishtoworld', 'blog');
-        }
+        }*/
 
         return $options;
     }
